@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "商品详情",
+  "usingComponents": {
+    "swiper-image": "/compontent/common/swiper-image",
+    "uni-number-box": "/compontent/uni/uni-number-box/uni-number-box",
+    "u-parse": "/compontent/uni/uParse/src/wxParse",
+    "uni-badge": "/compontent/uni/uni-badge/uni-badge",
+    "uni-popup": "/compontent/uni/uni-popup/uni-popup"
+  }
+}

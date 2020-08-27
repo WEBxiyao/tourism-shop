@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "首页",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "swiper-image": "/compontent/common/swiper-image",
+    "card-image": "/compontent/index/card-image",
+    "card-shop": "/compontent/index/card-shop"
+  }
+}

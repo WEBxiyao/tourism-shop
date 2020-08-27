@@ -1,0 +1,22 @@
+
+.uparse .p{ padding: 0!important;
+}
+.uparse view,.uparse uni-view{ line-height: 0!important;
+}
+.smallIcon{
+		position: absolute;
+		top:10rpx;
+		left:30rpx
+}
+.buy{
+		background-color:rgba(238,139,45,0.8);
+}
+.attrOn{
+	   border:1rpx solid #dc3545 !important;
+	   color: #dc3545 !important;
+}
+.uparse view,.uparse uni-view {
+   line-height: 1!important;
+}
+
+

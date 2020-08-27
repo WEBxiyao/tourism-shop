@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "订单配送",
+  "usingComponents": {
+    "uni-list-item": "/compontent/uni/uni-list-item/uni-list-item",
+    "price": "/compontent/common/price"
+  }
+}

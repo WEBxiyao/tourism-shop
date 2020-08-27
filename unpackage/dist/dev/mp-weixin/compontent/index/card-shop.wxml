@@ -1,0 +1,1 @@
+<view class="d-flex flex-column" style="width:233rpx;"><image style="height:233rpx;" src="{{itema.cover}}" mode="aspectFill"></image><view class=" flex-column d-flex p-2"><view class="elip-1"><text class="font-sm text-muted ">{{itema.title}}</text></view><text class="text-danger font-md">{{itema.pay_amount}}</text></view></view>

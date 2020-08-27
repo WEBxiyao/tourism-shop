@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "个人中心",
+  "usingComponents": {
+    "uni-list-item": "/compontent/uni/uni-list-item/uni-list-item",
+    "uni-badge": "/compontent/uni/uni-badge/uni-badge",
+    "card-image": "/compontent/index/card-image"
+  }
+}

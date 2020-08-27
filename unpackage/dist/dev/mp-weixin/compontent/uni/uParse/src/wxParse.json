@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "weixin-parse-template": "/compontent/uni/uParse/src/components/wxParseTemplate0"
+  }
+}
