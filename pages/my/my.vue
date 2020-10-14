@@ -34,7 +34,7 @@
 		
 		<view style="height: 20rpx; background-color: #f4f5f7;"></view>
 		<uni-list-item @click="shipGrade(3)"  title="购买会员套餐" rightText="查看详情" thumb="/static/tabbar/dengji.png" />
-		<uni-list-item @click="shipGrade(4)"  title="余额充值" rightText="查看详情" thumb="/static/tabbar/dengji.png" />
+		<uni-list-item @click="shipGrade(4)"  title="充值和提现" rightText="查看详情" thumb="/static/tabbar/dengji.png" />
 		<uni-list-item @click="shipGrade(1)"  title="发展的会员" rightText="查看详情" thumb="/static/tabbar/dengji.png" />
 		<uni-list-item @click="shipGrade(2)"  title="积分和余额记录" rightText="查看详情" thumb="/static/tabbar/dengji.png" />
 		<uni-list-item @click="LogOut"  title="退出登录"  thumb="/static/tabbar/dengji.png" />

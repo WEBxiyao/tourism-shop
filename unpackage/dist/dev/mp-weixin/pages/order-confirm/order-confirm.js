@@ -128,7 +128,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var uniListItem = function uniListItem() {__webpack_require__.e(/*! require.ensure | compontent/uni/uni-list-item/uni-list-item */ "compontent/uni/uni-list-item/uni-list-item").then((function () {return resolve(__webpack_require__(/*! @/compontent/uni/uni-list-item/uni-list-item.vue */ 127));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var price = function price() {__webpack_require__.e(/*! require.ensure | compontent/common/price */ "compontent/common/price").then((function () {return resolve(__webpack_require__(/*! @/compontent/common/price.vue */ 173));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var uniListItem = function uniListItem() {__webpack_require__.e(/*! require.ensure | compontent/uni/uni-list-item/uni-list-item */ "compontent/uni/uni-list-item/uni-list-item").then((function () {return resolve(__webpack_require__(/*! @/compontent/uni/uni-list-item/uni-list-item.vue */ 133));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var price = function price() {__webpack_require__.e(/*! require.ensure | compontent/common/price */ "compontent/common/price").then((function () {return resolve(__webpack_require__(/*! @/compontent/common/price.vue */ 179));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
 
 
 

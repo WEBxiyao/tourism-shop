@@ -760,7 +760,7 @@ function initData(vueOptions, context) {
     try {
       data = data.call(context); // 支持 Vue.prototype 上挂的数据
     } catch (e) {
-      if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.warn('根据 Vue 的 data 函数初始化小程序 data 失败，请尽量确保 data 函数中不访问 vm 对象，否则可能影响首次数据渲染速度。', data);
       }
     }
@@ -3331,7 +3331,7 @@ function sha256_self_test() {
 
 /***/ }),
 
-/***/ 163:
+/***/ 169:
 /*!**************************************************************!*\
   !*** D:/工作文件/归档/compontent/uni/uParse/src/libs/html2json.js ***!
   \**************************************************************/
@@ -3353,8 +3353,8 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 
 
-var _wxDiscode = _interopRequireDefault(__webpack_require__(/*! ./wxDiscode */ 164));
-var _htmlparser = _interopRequireDefault(__webpack_require__(/*! ./htmlparser */ 165));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} /**
+var _wxDiscode = _interopRequireDefault(__webpack_require__(/*! ./wxDiscode */ 170));
+var _htmlparser = _interopRequireDefault(__webpack_require__(/*! ./htmlparser */ 171));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} /**
                                                                                                                                                                  * html2Json 改造来自: https://github.com/Jxck/html2json
                                                                                                                                                                  *
                                                                                                                                                                  *
@@ -3603,7 +3603,56 @@ html2json;exports.default = _default;
 
 /***/ }),
 
-/***/ 164:
+/***/ 17:
+/*!*******************************************!*\
+  !*** D:/工作文件/归档/store/module/userInfo.js ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
+  state: {
+    userInfo: {
+      avatarUrl: '/static/image/bg.jpg',
+      nickName: '默认',
+      token: '' },
+
+    loginStatus: false,
+    token: null },
+
+  mutations: {
+    // 初始化值
+    initUser: function initUser(state) {
+      var user = uni.getStorageSync('user');
+      if (user) {
+        var userInfo = JSON.parse(user);
+        // state.avatarUrl=userInfo.avatarUrl
+        // state.nickName=userInfo.nickName
+        state.token = userInfo.token;
+        state.loginStatus = true;
+      }
+    },
+    // 登录
+    login: function login(state, userInfo) {
+      console.log(userInfo);
+      // state.userInfo=userInfo
+      state.loginStatus = true;
+      state.token = userInfo.token;
+      uni.setStorageSync('user', JSON.stringify(userInfo));
+    },
+    // 退出登录
+    Logout: function Logout(state) {
+      state.userInfo = {};
+      state.loginStatus = false;
+      state.token = null;
+      uni.removeStorageSync('userInfo');
+    } } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
+
+/***/ 170:
 /*!**************************************************************!*\
   !*** D:/工作文件/归档/compontent/uni/uParse/src/libs/wxDiscode.js ***!
   \**************************************************************/
@@ -3808,7 +3857,7 @@ function urlToHttpUrl(url, domain) {
 
 /***/ }),
 
-/***/ 165:
+/***/ 171:
 /*!***************************************************************!*\
   !*** D:/工作文件/归档/compontent/uni/uParse/src/libs/htmlparser.js ***!
   \***************************************************************/
@@ -3975,56 +4024,7 @@ HTMLParser;exports.default = _default;
 
 /***/ }),
 
-/***/ 17:
-/*!*******************************************!*\
-  !*** D:/工作文件/归档/store/module/userInfo.js ***!
-  \*******************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
-  state: {
-    userInfo: {
-      avatarUrl: '/static/image/bg.jpg',
-      nickName: '默认',
-      token: '' },
-
-    loginStatus: false,
-    token: null },
-
-  mutations: {
-    // 初始化值
-    initUser: function initUser(state) {
-      var user = uni.getStorageSync('user');
-      if (user) {
-        var userInfo = JSON.parse(user);
-        // state.avatarUrl=userInfo.avatarUrl
-        // state.nickName=userInfo.nickName
-        state.token = userInfo.token;
-        state.loginStatus = true;
-      }
-    },
-    // 登录
-    login: function login(state, userInfo) {
-      console.log(userInfo);
-      // state.userInfo=userInfo
-      state.loginStatus = true;
-      state.token = userInfo.token;
-      uni.setStorageSync('user', JSON.stringify(userInfo));
-    },
-    // 退出登录
-    Logout: function Logout(state) {
-      state.userInfo = {};
-      state.loginStatus = false;
-      state.token = null;
-      uni.removeStorageSync('userInfo');
-    } } };exports.default = _default;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
-
-/***/ }),
-
-/***/ 183:
+/***/ 189:
 /*!****************************************************!*\
   !*** D:/工作文件/归档/compontent/uni/uni-icons/icons.js ***!
   \****************************************************/
@@ -9690,7 +9690,7 @@ function type(obj) {
 
 function flushCallbacks$1(vm) {
     if (vm.__next_tick_callbacks && vm.__next_tick_callbacks.length) {
-        if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
+        if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:flushCallbacks[' + vm.__next_tick_callbacks.length + ']');
@@ -9711,14 +9711,14 @@ function nextTick$1(vm, cb) {
     //1.nextTick 之前 已 setData 且 setData 还未回调完成
     //2.nextTick 之前存在 render watcher
     if (!vm.__next_tick_pending && !hasRenderWatcher(vm)) {
-        if(Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:nextVueTick');
         }
         return nextTick(cb, vm)
     }else{
-        if(Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance$1 = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance$1.is || mpInstance$1.route) + '][' + vm._uid +
                 ']:nextMPTick');
@@ -9803,7 +9803,7 @@ var patch = function(oldVnode, vnode) {
     });
     var diffData = this.$shouldDiffData === false ? data : diff(data, mpData);
     if (Object.keys(diffData).length) {
-      if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + this._uid +
           ']差量更新',
           JSON.stringify(diffData));

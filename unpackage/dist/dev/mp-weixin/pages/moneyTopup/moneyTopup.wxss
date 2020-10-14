@@ -1,0 +1,10 @@
+
+.on{
+	color:#FD6801 !important;
+	font-weight: bold;
+}
+.message{
+	width: 96%;
+	height: 100rpx;
+}
+
