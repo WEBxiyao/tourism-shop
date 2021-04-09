@@ -178,7 +178,14 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _vuex = __webpack_require__(/*! vuex */ 12);function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {_defineProperty(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var uniListItem = function uniListItem() {__webpack_require__.e(/*! require.ensure | compontent/uni/uni-list-item/uni-list-item */ "compontent/uni/uni-list-item/uni-list-item").then((function () {return resolve(__webpack_require__(/*! @/compontent/uni/uni-list-item/uni-list-item.vue */ 133));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var uniBadge = function uniBadge() {__webpack_require__.e(/*! require.ensure | compontent/uni/uni-badge/uni-badge */ "compontent/uni/uni-badge/uni-badge").then((function () {return resolve(__webpack_require__(/*! @/compontent/uni/uni-badge/uni-badge.vue */ 140));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var cardImage = function cardImage() {__webpack_require__.e(/*! require.ensure | compontent/index/card-image */ "compontent/index/card-image").then((function () {return resolve(__webpack_require__(/*! @/compontent/index/card-image.vue */ 123));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+
+
+
+
+
+
+
+var _vuex = __webpack_require__(/*! vuex */ 12);function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {_defineProperty(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var uniListItem = function uniListItem() {__webpack_require__.e(/*! require.ensure | compontent/uni/uni-list-item/uni-list-item */ "compontent/uni/uni-list-item/uni-list-item").then((function () {return resolve(__webpack_require__(/*! @/compontent/uni/uni-list-item/uni-list-item.vue */ 135));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var uniBadge = function uniBadge() {__webpack_require__.e(/*! require.ensure | compontent/uni/uni-badge/uni-badge */ "compontent/uni/uni-badge/uni-badge").then((function () {return resolve(__webpack_require__(/*! @/compontent/uni/uni-badge/uni-badge.vue */ 142));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var cardImage = function cardImage() {__webpack_require__.e(/*! require.ensure | compontent/index/card-image */ "compontent/index/card-image").then((function () {return resolve(__webpack_require__(/*! @/compontent/index/card-image.vue */ 125));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
 {
   data: function data() {
     return {
@@ -231,12 +238,11 @@ var _vuex = __webpack_require__(/*! vuex */ 12);function ownKeys(object, enumera
 
   },
 
-  methods: _objectSpread({},
-  (0, _vuex.mapMutations)(['login', 'Logout']), {
+  methods: _objectSpread(_objectSpread({},
+  (0, _vuex.mapMutations)(['login', 'Logout'])), {}, {
     // 判断是不是通过分享进来的
     shareDate: function shareDate() {
       var id = uni.getStorageSync('shareId');
-      console.log(id, "---jjjjjjjjjjj---");
       if (id === 0 || !id) return;
       this.$H.post('/api/deal_user_commend', {
         id: id }).
@@ -302,7 +308,6 @@ var _vuex = __webpack_require__(/*! vuex */ 12);function ownKeys(object, enumera
     // 获取用户信息
     getUser: function getUser() {var _this2 = this;
       this.$H.get('/api/account').then(function (res) {
-        console.log(res, "用户信息");
         if (!res.name) {
           uni.showModal({
             title: "提示",
@@ -320,7 +325,8 @@ var _vuex = __webpack_require__(/*! vuex */ 12);function ownKeys(object, enumera
           name: res.name,
           userId: res.id,
           card_num: res.card_num,
-          ugroup_title: res.ugroup_title };
+          ugroup_title: res.ugroup_title,
+          user_group_count: res.user_group_count };
 
       });
     } }),

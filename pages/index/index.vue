@@ -87,7 +87,6 @@
 				})
 				this.$H.get('/api/index').then(res=>{
 					uni.hideLoading()
-					console.log(res,"首页数据")
 					this.imageSwipe=res.rotate
 					this.hot_goods=res.hot_goods
 					this.list=res.cates

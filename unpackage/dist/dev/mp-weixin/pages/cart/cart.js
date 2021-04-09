@@ -161,7 +161,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _vuex = __webpack_require__(/*! vuex */ 12);function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {_defineProperty(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var uniNumberBox = function uniNumberBox() {__webpack_require__.e(/*! require.ensure | compontent/uni/uni-number-box/uni-number-box */ "compontent/uni/uni-number-box/uni-number-box").then((function () {return resolve(__webpack_require__(/*! @/compontent/uni/uni-number-box/uni-number-box.vue */ 147));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+
+
+var _vuex = __webpack_require__(/*! vuex */ 12);function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {_defineProperty(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var uniNumberBox = function uniNumberBox() {__webpack_require__.e(/*! require.ensure | compontent/uni/uni-number-box/uni-number-box */ "compontent/uni/uni-number-box/uni-number-box").then((function () {return resolve(__webpack_require__(/*! @/compontent/uni/uni-number-box/uni-number-box.vue */ 149));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
 {
   data: function data() {
     return {};
@@ -171,13 +173,13 @@ var _vuex = __webpack_require__(/*! vuex */ 12);function ownKeys(object, enumera
   components: {
     uniNumberBox: uniNumberBox },
 
-  computed: _objectSpread({},
+  computed: _objectSpread(_objectSpread({},
   (0, _vuex.mapState)({
-    list: function list(_ref) {var cart = _ref.cart;return cart.cart;} }), {},
+    list: function list(_ref) {var cart = _ref.cart;return cart.cart;} })),
 
   (0, _vuex.mapGetters)(['totalPrice', 'totalNum', 'cartIds'])),
 
-  methods: _objectSpread({
+  methods: _objectSpread(_objectSpread(_objectSpread({
     changeNum: function changeNum(e, item, index) {var _this = this;
       if (e === item.num) return;
       uni.showLoading({
@@ -195,8 +197,8 @@ var _vuex = __webpack_require__(/*! vuex */ 12);function ownKeys(object, enumera
       });
 
     } },
-  (0, _vuex.mapActions)(['delect']), {},
-  (0, _vuex.mapMutations)(['changNumCart', 'getData']), {
+  (0, _vuex.mapActions)(['delect'])),
+  (0, _vuex.mapMutations)(['changNumCart', 'getData'])), {}, {
     // 删除商品
     delectShop: function delectShop(id) {var _this2 = this;
       uni.showLoading({

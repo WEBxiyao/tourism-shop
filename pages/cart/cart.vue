@@ -1,3 +1,5 @@
+
+
 <template>
 	<view>
 		<template v-if="list.length>0">

@@ -150,8 +150,8 @@ var _vuex = __webpack_require__(/*! vuex */ 12);function ownKeys(object, enumera
   onLoad: function onLoad() {
 
   },
-  methods: _objectSpread({},
-  (0, _vuex.mapMutations)(['login']), {
+  methods: _objectSpread(_objectSpread({},
+  (0, _vuex.mapMutations)(['login'])), {}, {
     // 判断是不是通过分享进来的
     shareDate: function shareDate() {
       var id = uni.getStorageSync('shareId');

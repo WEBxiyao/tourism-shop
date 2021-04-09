@@ -67,7 +67,6 @@ export default {
 			uni.request({
 				...options,
 				success: (result) => {
-					console.log(result,"初始数据")
 					// 服务端失败
 					if(!result.data.result){
 						return uni.showToast({

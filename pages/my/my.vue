@@ -6,9 +6,16 @@
 				<image @click="editor" style="width: 160rpx;height:160rpx;border-radius: 80rpx;" :src="userInfo.cover" mode="aspectFill" lazy-load></image>
 				<view class="text-dark font-lg text-white">{{userInfo.name}}</view>
 				<view class="text-dark font-lg text-white">{{userInfo.ugroup_title}}</view>
-				<view class="text-dark font-lg text-white">余额:{{userInfo.score}}</view>
-				<view class="text-dark font-lg text-white">积分:{{userInfo.integral}}</view>
-				<view class="text-dark font-lg text-white">旅游券:{{userInfo.card_num}}</view>
+				<view class="text-dark font-lg text-white">
+					<text>余额:{{userInfo.score}}</text>
+					<text class="mx-2">|</text>
+					<text>积分:{{userInfo.integral}}</text>
+				</view>
+				<view class="text-dark font-lg text-white">
+					<text>旅游券:{{userInfo.card_num}}</text>
+					<text class="mx-2">|</text>
+					<text class="mx-2">团队人数:{{userInfo.user_group_count}}</text>
+				</view>
 			</template>
 			<!-- #ifdef MP-WEIXIN -->
 			<template v-else>
@@ -104,7 +111,6 @@
 			// 判断是不是通过分享进来的
 			shareDate(){
 				let id=uni.getStorageSync('shareId')
-				console.log(id,"---jjjjjjjjjjj---")
 				if(id===0 || !id) return
 				this.$H.post('/api/deal_user_commend',{
 					id
@@ -170,7 +176,6 @@
 			// 获取用户信息
 			getUser(){
 				this.$H.get('/api/account').then(res=>{
-					console.log(res,"用户信息")
 					if(!res.name){
 						uni.showModal({
 							title: "提示",
@@ -188,7 +193,8 @@
 						name:res.name,
 						userId:res.id,
 						card_num:res.card_num,
-						ugroup_title:res.ugroup_title
+						ugroup_title:res.ugroup_title,
+						user_group_count:res.user_group_count
 					}
 				})
 			},
